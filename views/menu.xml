@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+        <menuitem id="wikulaundry_menu_root" name="Wiku Laundry" sequence="10"/>
+
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="wikulaundry_datamaster_menu_categ" 
+            name="Operasional" 
+            parent="wikulaundry_menu_root" 
+            sequence="10"/> 
+
+        <menuitem id="wikulaundry_datacontact_menu_categ" 
+            name="Contacts" 
+            parent="wikulaundry_menu_root" 
+            sequence="11"/> 
+       
+    
+    </data>
+</odoo>
