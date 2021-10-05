@@ -47,6 +47,9 @@
                 <page string="JENIS CUCIAN">
                   <field name="models_id"/>
                 </page>
+                <page string="pegawai">
+                  <field name="pegawai_id"/>
+                </page>
               </notebook>
 
             </group>

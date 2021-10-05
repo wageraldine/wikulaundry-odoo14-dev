@@ -40,5 +40,8 @@ class WikuLaundry(models.Model):
                             inverse_name='teknik_id', 
                             string='jenis cucian')
     
+    pegawai_id = fields.Many2one(comodel_name='res.partner', string='pegawainya')
+    
+    
     
     
