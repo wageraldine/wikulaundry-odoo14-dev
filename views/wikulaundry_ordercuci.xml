@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- wikulaundry.order tree view -->
+    <record id="wikulaundry_order_view_tree" model="ir.ui.view">
+        <field name="name">Order Cucian</field>
+        <field name="model">wikulaundry.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tanggal_masuk"/>
+                <field name="customer_id"/>                
+            </tree>
+        </field>
+    </record>
+
+    <!-- wikulaundry.order form view -->
+  <record id="wikulaundry_order_view_form" model="ir.ui.view">
+    <field name="name">wikulaundry.order.view.form</field>
+    <field name="model">wikulaundry.order</field>
+    <field name="arch" type="xml">
+      <form string="Daftar Order Cucian">
+        <sheet>
+          <group>
+            <group  colspan='4'>
+              <group colspan='2'>
+                  <field name="name"/>                    
+                  <field name="tanggal_masuk"/>
+              </group>
+              <group colspan='2'>
+                <separator string="PEMESAN"/>
+                  <field name="customer_id"/> 
+                  <field name="models_id"/>         
+              </group>              
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- wikulaundry.order action window -->
+  <record id="wikulaundry_order_action" model="ir.actions.act_window">
+      <field name="name">DAFTAR ORDER CUCIAN</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">wikulaundry.order</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="wikulaundry_order_menu_act" 
+        name="Order" 
+        parent="wikulaundry_menu_root" 
+        action="wikulaundry_order_action" 
+        sequence="5"/>
+
+</odoo>

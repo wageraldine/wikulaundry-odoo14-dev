@@ -13,34 +13,46 @@ class WikuLaundry(models.Model):
         selection=[('light A', 'Light A'), ('light B', 'Light B'), ('medium A', 'Medium A'), ('medium B', 'Medium B'), ('heavy A', 'Heavy A'), ('heavy B', 'Heavy B'),('Super', 'Super')]
     )
     
-    air = fields.Selection(string='Jenis Air',
-                            selection=[('air panas', 'Air Panas'), ('air dingin', 'Air Dingin'), ('cuci uap', 'Cuci Uap'), ('mesin khusus', 'Mesin Khusus')],
-                            required=True
+    air = fields.Selection(
+        string='Jenis Air',
+        selection=[('air panas', 'Air Panas'), ('air dingin', 'Air Dingin'), ('cuci uap', 'Cuci Uap'), ('mesin khusus', 'Mesin Khusus')],
+        required=True
     )
     
     harga = fields.Integer(
-                            string='harga cuci',
-                            required=True 
+        string='harga cuci',
+        required=True 
     )
     
-    kotoran =  fields.Selection(string='Tipe Kotoran',
-                            selection=[('ringan', 'Ringan'), ('sedang', 'Sedang'), ('berat', 'Berat')],
-                            required=True
+    kotoran =  fields.Selection(
+        string='Tipe Kotoran',
+        selection=[('ringan', 'Ringan'), ('sedang', 'Sedang'), ('berat', 'Berat')],
+        required=True
     )
     
-    tersedia = fields.Boolean(string='tersedia',
-                             default=True
+    tersedia = fields.Boolean(
+        string='tersedia',
+        default=True
     )
     
-    deskripsicuci = fields.Char(string='deskripsi',
-                            help='isi dengan alat yang digunakan untuk mencuci')
+    deskripsicuci = fields.Char(
+        string='deskripsi',
+        help='isi dengan alat yang digunakan untuk mencuci')
     
     models_id = fields.One2many(
-                            comodel_name='wikulaundry.jeniscucian', 
-                            inverse_name='teknik_id', 
-                            string='jenis cucian')
+        comodel_name='wikulaundry.jeniscucian', 
+        inverse_name='teknik_id', 
+        string='jenis cucian')
     
-    pegawai_id = fields.Many2one(comodel_name='res.partner', string='pegawainya')
+    pegawai_id = fields.Many2one(
+        comodel_name='res.partner', 
+        string='MANAGER',
+        domain = "[('is_pegawainya','=',True)]"
+        )
+    
+    
+    
+    
     
     
     

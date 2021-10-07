@@ -29,6 +29,7 @@
         'views/menu.xml',
         'views/wikulaundry_views.xml',
         'views/wikulaundry_caracuci.xml',
+        'views/wikulaundry_ordercuci.xml',
         'views/wikulaundry_contact.xml',
         'views/wikulaundry_contact_pegawai.xml',
         'views/templates.xml',

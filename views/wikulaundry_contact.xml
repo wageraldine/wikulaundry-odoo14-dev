@@ -8,8 +8,7 @@
       <field name="inherit_id" ref="base.view_partner_tree"/>
       <field name="arch" type="xml">
         <!-- Add your xpath here -->
-          <field name="category_id" position="replace"/>
-        
+          <field name="category_id" position="replace"/>  
       </field>
     </record>
    
@@ -20,15 +19,16 @@
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
         <!-- Add your xpath here -->
-        <field name="vat" position="after">
+        <field name="parent_id" position="after">
           <field name="is_pegawainya"/>
-          <field name="is_customernya"/>        
+          <field name="is_customernya"/> 
+          <field name="is_menikah"/>                 
         </field>
       </field>
     </record>
 
     <!-- model.name inherit search view -->
-    <!-- <record id="res_partner_inherit_search" model="ir.ui.view">
+    <record id="res_partner_inherit_search" model="ir.ui.view">
       <field name="name">res.partner.inherit.view.search</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_res_partner_filter"/>
@@ -38,7 +38,7 @@
         <filter string="Pegawai" name="pegawainya" domain="[('is_pegawainya', '=', True)]"/>
        </field>        
       </field>      
-    </record> -->
+    </record>
 
     <!-- res.partner action window -->
     <record id="customer_action_window" model="ir.actions.act_window">

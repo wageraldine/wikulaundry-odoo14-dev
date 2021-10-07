@@ -20,7 +20,7 @@
     </field>
   </record>
 
-  <!-- model.name form view -->
+  <!-- wikulaundry.caracuci form view -->
   <record id="wikulaundry_caracuci_view_form" model="ir.ui.view">
     <field name="name">wikulaundry.caracuci.view.form</field>
     <field name="model">wikulaundry.caracuci</field>
@@ -47,7 +47,7 @@
                 <page string="JENIS CUCIAN">
                   <field name="models_id"/>
                 </page>
-                <page string="pegawai">
+                <page string="MANAGER">
                   <field name="pegawai_id"/>
                 </page>
               </notebook>
