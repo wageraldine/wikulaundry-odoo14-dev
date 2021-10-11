@@ -7,9 +7,8 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
-                <field name="name"/>
-                <field name="tanggal_masuk"/>
-                <field name="customer_id"/>                
+                <field name="name"/> 
+                <field name="tanggal_masuk"/>                               
             </tree>
         </field>
     </record>
@@ -26,12 +25,20 @@
               <group colspan='2'>
                   <field name="name"/>                    
                   <field name="tanggal_masuk"/>
-              </group>
-              <group colspan='2'>
-                <separator string="PEMESAN"/>
-                  <field name="customer_id"/> 
-                  <field name="models_id"/>         
+                  <field name="jml_pesanan"/>
               </group>              
+              <notebook colspan='4'>
+                <page name="bahan_cuci" string="Bahan Cuci">
+                  <field name="detailcucian_ids">
+                    <tree editable="bottom">                      
+                      <field name="jenis"/>  
+                      <field name="harga"/>                   
+                      <field name="berat"/>
+                      <field name="jumlah_harga"/>                      
+                    </tree>                    
+                  </field>                                   
+                </page>
+              </notebook>   
             </group>
           </group>
         </sheet>

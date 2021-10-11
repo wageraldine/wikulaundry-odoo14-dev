@@ -39,7 +39,7 @@ class WikuLaundry(models.Model):
         string='deskripsi',
         help='isi dengan alat yang digunakan untuk mencuci')
     
-    models_id = fields.One2many(
+    models_ids = fields.One2many(
         comodel_name='wikulaundry.jeniscucian', 
         inverse_name='teknik_id', 
         string='jenis cucian')

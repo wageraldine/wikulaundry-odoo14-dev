@@ -19,6 +19,11 @@ class ModelDasar(models.Model):
     
     
     
+    
+    
+    
+    
+    
 class WikuLaundry(models.Model):
     _name = 'wikulaundry.jeniscucian'
     _description = 'daftar jenis-jenis cucian'
@@ -43,10 +48,7 @@ class WikuLaundry(models.Model):
         required=True,
         delegate=True)
     
-    order_cuci_id = fields.One2many(
-        comodel_name='wikulaundry.order', 
-        inverse_name='models_id', 
-        string='Order Cuci')
+    
     
     
     

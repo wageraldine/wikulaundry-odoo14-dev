@@ -12,5 +12,10 @@ class Partner(models.Model):
         string='Customer', 
         default=False
         )
+    Order_ids = fields.One2many(
+        comodel_name='wikulaundry.order', 
+        inverse_name='name', 
+        string='Nama Order')
+    
     
     

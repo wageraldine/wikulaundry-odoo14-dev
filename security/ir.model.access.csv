@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_wikulaundry_jeniscucian,access.wikulaundry.jeniscucian,model_wikulaundry_jeniscucian,,1,1,1,1
 access_wikulaundry_caracuci,access.wikulaundry.caracuci,model_wikulaundry_caracuci,,1,1,1,1
 access_wikulaundry_order,access.wikulaundry.order,model_wikulaundry_order,,1,1,1,1
+access_wikulaundry_detailcucian,access.wikulaundry.detailcucian,model_wikulaundry_detailcucian,,1,1,1,1

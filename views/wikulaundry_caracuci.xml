@@ -45,7 +45,7 @@
                   <field name="deskripsicuci"/>
                 </page>
                 <page string="JENIS CUCIAN">
-                  <field name="models_id"/>
+                  <field name="models_ids"/>
                 </page>
                 <page string="MANAGER">
                   <field name="pegawai_id"/>
