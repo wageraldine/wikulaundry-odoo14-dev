@@ -18,12 +18,6 @@ class ModelDasar(models.Model):
     )
     
     
-    
-    
-    
-    
-    
-    
 class WikuLaundry(models.Model):
     _name = 'wikulaundry.jeniscucian'
     _description = 'daftar jenis-jenis cucian'
