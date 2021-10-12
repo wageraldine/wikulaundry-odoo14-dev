@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class ModelDasar(models.Model):
     _name = "wikulaundry.modeldasar"
@@ -42,7 +43,38 @@ class WikuLaundry(models.Model):
         required=True,
         delegate=True)
     
+    deskrip = fields.Char(
+        compute='_compute_deskrip', 
+        string='Teknik Pencucian')
     
+    @api.depends('teknik_id')
+    def _compute_deskrip(self):
+        for record in self:
+            record.deskrip = record.teknik_id.deskripsicuci
+    
+    @api.onchange('tipe')
+    def _onchange_field_name(self):
+        if self.tipe == 'katun':
+            return {
+                'warning' : {
+                    'title' : "Teknik Pencucian",
+                    'message' : "Rubah teknik pencucian ke golongan B"
+                },
+            }
+        elif self.tipe == 'polyester':
+            return {
+                'warning' : {
+                    'title' : "Teknik Pencucian",
+                    'message' : "Rubah teknik pencucian ke golongan A"
+                }
+            }
+    
+    @api.constrains('name')
+    def _check_name(self):
+        for record in self:
+            bahan = self.env['wikulaundry.jeniscucian'].search([('name', '=',record.name)])
+            if bahan:
+                raise ValidationError("Bahan %s sudah ada" % record.name)
     
     
     

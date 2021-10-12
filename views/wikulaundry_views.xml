@@ -44,7 +44,7 @@
                   <field name="deskripsi"/>
                 </page>
                 <page string="DESKRIPSI PENCUCIAN">
-                  <field name="deskripsi"/>
+                  <field name="deskrip"/>
                 </page>
               </notebook>
 

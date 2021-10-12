@@ -34,7 +34,7 @@
                       <field name="jenis"/>  
                       <field name="harga"/>                   
                       <field name="berat"/>
-                      <field name="jumlah_harga"/>                      
+                      <field name="jumlah_harga" sum="Total Tagihan"/>                      
                     </tree>                    
                   </field>                                   
                 </page>

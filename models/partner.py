@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class Partner(models.Model):
@@ -17,5 +18,6 @@ class Partner(models.Model):
         inverse_name='name', 
         string='Nama Order')
     
+
     
     

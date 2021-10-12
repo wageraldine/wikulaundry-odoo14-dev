@@ -30,6 +30,8 @@ class OrderCuci(models.Model):
             record.jml_pesanan +=len(record.detailcucian_ids)
             
     
+            
+            
 class DetailCucian(models.Model):
     _name = 'wikulaundry.detailcucian'
     _description = 'Detail Cucian Wiku Laundry'
@@ -55,8 +57,7 @@ class DetailCucian(models.Model):
     
     berat = fields.Integer(
         string='Berat Cucian')
-    
-    
+        
     jumlah_harga = fields.Integer(
         compute='_compute_field_name', 
         string='Jumlah Harga')
@@ -65,6 +66,8 @@ class DetailCucian(models.Model):
     def _compute_field_name(self):
         for record in self:
             record.jumlah_harga = record.berat * record.harga
+            
+   
            
    
     

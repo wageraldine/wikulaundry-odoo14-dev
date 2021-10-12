@@ -3,8 +3,7 @@
     'name': "wiku laundry",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        WIKU LAUNDRY SYSTEM MANAGEMENT""",
 
     'description': """
         Ini adalah sistem wikulaundry
