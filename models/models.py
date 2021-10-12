@@ -72,7 +72,7 @@ class WikuLaundry(models.Model):
     @api.constrains('name')
     def _check_name(self):
         for record in self:
-            bahan = self.env['wikulaundry.jeniscucian'].search([('name', '=',record.name)])
+            bahan = self.env['wikulaundry.jeniscucian'].search([('name', '=',record.name), ('id', '!=',record.id)])
             if bahan:
                 raise ValidationError("Bahan %s sudah ada" % record.name)
     
