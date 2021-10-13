@@ -8,7 +8,8 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/> 
-                <field name="tanggal_masuk"/>                               
+                <field name="tanggal_masuk"/>       
+                <field name="total_harga"/>                        
             </tree>
         </field>
     </record>
@@ -26,6 +27,7 @@
                   <field name="name"/>                    
                   <field name="tanggal_masuk"/>
                   <field name="jml_pesanan"/>
+                  <field name="total_harga"/> 
               </group>              
               <notebook colspan='4'>
                 <page name="bahan_cuci" string="Bahan Cuci">
@@ -34,7 +36,7 @@
                       <field name="jenis"/>  
                       <field name="harga"/>                   
                       <field name="berat"/>
-                      <field name="jumlah_harga" sum="Total Tagihan"/>                      
+                      <field name="jumlah_harga" sum="Total Tagihan"/>                                       
                     </tree>                    
                   </field>                                   
                 </page>

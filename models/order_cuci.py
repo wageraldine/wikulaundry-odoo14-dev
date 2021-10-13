@@ -29,7 +29,15 @@ class OrderCuci(models.Model):
         for record in self:
             record.jml_pesanan +=len(record.detailcucian_ids)
             
-    
+    total_harga = fields.Integer(compute='_compute_total_harga', string='Total Tagihan')
+   
+    @api.model
+    def _compute_total_harga(self):        
+        for record in self:           
+                total = sum(self.env['wikulaundry.detailcucian'].search([('order_id','=', record.id)]).mapped('jumlah_harga'))
+                record.total_harga = total
+            
+
             
             
 class DetailCucian(models.Model):
@@ -67,11 +75,6 @@ class DetailCucian(models.Model):
         for record in self:
             record.jumlah_harga = record.berat * record.harga
             
-   
-           
-   
-    
-    
     
     
     
