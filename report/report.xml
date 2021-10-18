@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="report_wikulaundry_order" model="ir.actions.report">
+        <field name="name">Report Order</field>
+        <field name="model">wikulaundry.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wikulaundry.report_wikulaundry_order</field>
+        <field name="report_file">wikulaundry.report_wikulaundry_order</field>
+        <field name="binding_model_id" ref="model_wikulaundry_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+</odoo>

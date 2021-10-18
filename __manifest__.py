@@ -32,6 +32,9 @@
         'views/wikulaundry_contact.xml',
         'views/wikulaundry_contact_pegawai.xml',
         'views/templates.xml',
+        'report/report.xml',
+        'report/orderinvoice.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
