@@ -1,21 +1,31 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+
+from odoo import http, models, fields
+from odoo.http import request
+import json
 
 
-# class Wikulaundry(http.Controller):
-#     @http.route('/wikulaundry/wikulaundry/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class Wikulaundry(http.Controller):
+    @http.route('/bahancuci', auth='public')
+    def get_models(self, **kwargs):
+        order = request.env['wikulaundry.jeniscucian'].search([])
+        value = []
+        for ord in order:
+            value.append({
+                'nama' : ord.name,
+                'ukuran' : ord.ukuran,
+                'tipe' : ord.tipe                
+            })
+        return json.dumps(value)
 
-#     @http.route('/wikulaundry/wikulaundry/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('wikulaundry.listing', {
-#             'root': '/wikulaundry/wikulaundry',
-#             'objects': http.request.env['wikulaundry.wikulaundry'].search([]),
-#         })
-
-#     @http.route('/wikulaundry/wikulaundry/objects/<model("wikulaundry.wikulaundry"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('wikulaundry.object', {
-#             'object': obj
-#         })
+    @http.route('/caracuci', auth='public')
+    def get_caracuci(self, **kwargs):
+        caracuci = request.env['wikulaundry.caracuci'].search([])
+        value = []
+        for cc in caracuci:
+            value.append({
+                'nama' : cc.name,
+                'tingkat_kotoran' : cc.kotoran,
+                'jenis_air' : cc.air,
+                'harga_per_kg' : cc.harga                
+            })
+        return json.dumps(value)
