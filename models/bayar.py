@@ -21,7 +21,7 @@ class Bayar(models.Model):
             record.tgl_masuk = record.name.tanggal_masuk
        
     tgl_bayar = fields.Datetime(        
-        string='Tanggal Bayar', 
+        string='Tanggal Selesai', 
         default=fields.Datetime.now())
     
     tagihan = fields.Integer(

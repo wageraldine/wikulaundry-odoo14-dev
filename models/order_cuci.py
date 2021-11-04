@@ -26,7 +26,7 @@ class OrderCuci(models.Model):
     
     tanggal_bayar = fields.Datetime(
         compute='_compute_tanggal',
-        string='Tanggal Bayar'
+        string='Tanggal Selesai'
         )      
             
     detailcucian_ids = fields.One2many(
