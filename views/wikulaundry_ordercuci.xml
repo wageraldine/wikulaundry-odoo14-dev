@@ -7,11 +7,18 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
-                <field name="name"/> 
-                <field name="tanggal_masuk"/>       
-                <field name="total_harga"/>                        
-            </tree>
-        </field>
+                <header>
+                  <button name="confirm" string="Masuk Akunting" class="btn-success" type="object"/>
+                  <button name="cancel" string="Keluar Akunting" class="btn-warning" type="object"/>
+                </header>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="tanggal_masuk"/>  
+                <field name="tanggal_bayar"/>      
+                <field name="total_harga"/>   
+                <field name="masuk_akunting"/>                               
+            </tree>    
+        </field>        
     </record>
 
     <!-- wikulaundry.order form view -->
@@ -59,8 +66,8 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem 
         id="wikulaundry_order_menu_act" 
-        name="Order" 
-        parent="wikulaundry_menu_root" 
+        name="Daftar Order" 
+        parent="wikulaundry_dataorder_menu_categ" 
         action="wikulaundry_order_action" 
         sequence="5"/>
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- wikulaundry.bayar tree view -->
+    <record id="wikulaundry_bayar_view_tree" model="ir.ui.view">
+        <field name="name">Pembayaran Tagihan Cuci</field>
+        <field name="model">wikulaundry.bayar</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="tgl_masuk"/>
+                <field name="tgl_bayar"/>
+                <field name="tagihan"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- wikulaundry.bayar form view -->
+    <record id="wikulaundry_bayar_view_form" model="ir.ui.view">
+        <field name="name">Form Pembayaran</field>
+        <field name="model">wikulaundry.bayar</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="tgl_masuk"/>
+                        <field name="tgl_bayar"/>
+                        <field name="tagihan"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- wikulaundry.bayar action window -->
+    <record id="wikulaundry_bayar_action" model="ir.actions.act_window">
+        <field name="name">Pembayaran Cucian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wikulaundry.bayar</field>
+        <field name="view_mode">tree,form</field>        
+    </record>    
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="wikulaundry_bayar_menu_act" 
+        name="Pembayaran Cucian" 
+        parent="wikulaundry_dataorder_menu_categ" 
+        action="wikulaundry_bayar_action" 
+        sequence="10"/>
+
+</odoo>

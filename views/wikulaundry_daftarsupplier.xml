@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="wikulaundry_suppliernya_view_tree" model="ir.ui.view">
+    <field name="name">wikulaundry.suppliernya.view.tree</field>
+    <field name="model">wikulaundry.suppliernya</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="alamat"/>
+            <field name="cp"/>
+            <field name="telp"/>
+            <field name="bahanalat"/>           
+            
+        </tree>
+    </field>
+</record>
+
+<!-- wikulaundry.suppliernya form view -->
+<record id="wikulaundry_suppliernya_view_form" model="ir.ui.view">
+    <field name="name">wikulaundry.suppliernya.view.form</field>
+    <field name="model">wikulaundry.suppliernya</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="alamat"/>
+                    <field name="cp"/>
+                    <field name="telp"/>
+                    
+                </group>
+                <notebook>
+                    <page name="bahan_alat" string="Barang Supply">
+                        <field name="bahanalat">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="harga"/>
+                                <field name="unit"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="wikulaundry_suppliernya_action" model="ir.actions.act_window">
+    <field name="name">Daftar Supplier</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">wikulaundry.suppliernya</field>
+    <field name="view_mode">tree,form</field> 
+</record>
+
+<!-- This Menu Item must have a parent and an action -->
+<menuitem id="wikulaundry_suppliernya_menu_act" 
+    name="Daftar Supplier" 
+    parent="wikulaundry_pembelian_menu_categ" 
+    action="wikulaundry_suppliernya_action" 
+    sequence="10"/>
+    
+
+</odoo>
+

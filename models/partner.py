@@ -9,10 +9,12 @@ class Partner(models.Model):
         string='Pegawai', 
         default=False
         )
+    
     is_customernya = fields.Boolean(
         string='Customer', 
         default=False
-        )
+        ) 
+    
     Order_ids = fields.One2many(
         comodel_name='wikulaundry.order', 
         inverse_name='name', 

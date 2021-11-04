@@ -14,6 +14,23 @@
             name="Contacts" 
             parent="wikulaundry_menu_root" 
             sequence="11"/> 
+        
+        <menuitem id="wikulaundry_dataorder_menu_categ" 
+            name="Order" 
+            parent="wikulaundry_menu_root" 
+            sequence="12"/>
+
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="wikulaundry_pembelian_menu_categ" 
+            name="Pembelian" 
+            parent="wikulaundry_menu_root" 
+            sequence="13"/>
+
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="wikulaundry_akunting_menu_categ" 
+            name="Keuangan" 
+            parent="wikulaundry_menu_root" 
+            sequence="14"/>
        
     
     </data>
