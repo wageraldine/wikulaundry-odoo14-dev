@@ -5,8 +5,9 @@
         <field name="name">Akunting</field>
         <field name="model">wikulaundry.akunting</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree create="false" delete="false">
                 <field name="name"/>
+                <field name="date"/>
                 <field name="debet"/>
                 <field name="kredit"/>
                 <field name="saldo"/>

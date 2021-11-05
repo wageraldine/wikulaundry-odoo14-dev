@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 class OrderCuci(models.Model):
     _name = 'wikulaundry.order'
     _description = 'Daftar Order Cuci WikuLaundry'
@@ -81,9 +82,11 @@ class OrderCuci(models.Model):
    
     def confirm(self):
         for record in self:
-            record.masuk_akunting=True
-            self.env['wikulaundry.akunting'].create({'kredit':record.total_harga,'name':record.name.display_name})
-        
+            if record.tanggal_bayar:
+                record.masuk_akunting=True
+                self.env['wikulaundry.akunting'].create({'kredit':record.total_harga,'name':record.name.display_name})
+            else:
+                raise ValidationError("Yang belum selesai dicuci tidak bisa masuk")
     def cancel(self):
         for record in self:
             record.masuk_akunting=False

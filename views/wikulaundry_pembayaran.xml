@@ -36,7 +36,7 @@
     
     <!-- wikulaundry.bayar action window -->
     <record id="wikulaundry_bayar_action" model="ir.actions.act_window">
-        <field name="name">Pembayaran Cucian</field>
+        <field name="name">Penyelesaian Cucian</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wikulaundry.bayar</field>
         <field name="view_mode">tree,form</field>        
