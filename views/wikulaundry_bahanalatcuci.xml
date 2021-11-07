@@ -8,7 +8,9 @@
             <field name="name"/>
             <field name="harga"/>
             <field name="unit"/>
-            <field name="suppliernya"/>            
+            <field name="stok"/>
+            <field name="suppliernya"/>  
+            <field name="telp"/>          
         </tree>
     </field>
 </record>

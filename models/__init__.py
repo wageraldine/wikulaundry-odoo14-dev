@@ -8,3 +8,4 @@ from . import supplier
 from . import bahanalatcuci
 from . import bayar
 from . import akunting
+from . import belanja

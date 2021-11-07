@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- wikulaundry.pesan tree view -->
+<record id="wikulaundry_pesan_view_tree" model="ir.ui.view">
+    <field name="name">model.name.view.tree</field>
+    <field name="model">wikulaundry.pesan</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="supplier"/>
+            <field name="contact"/>
+            <field name="tanggal_pesan"/>
+            <field name="tanggal_masuk"/>
+            <field name="jml_pesan"/>
+            <field name="masuk_akunting"/>
+            
+        </tree>
+    </field>
+</record>
+<!-- wikulaundry.pesan form view -->
+<record id="model_name_view_form" model="ir.ui.view">
+    <field name="name">Form Pemesanan Barang</field>
+    <field name="model">wikulaundry.pesan</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="supplier"/>
+                    <field name="contact"/>
+                    <field name="tanggal_pesan"/>
+                    <field name="jml_pesan"/>
+                    
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+<!-- wikulaundry.pesan action window -->
+<record id="wikulaundry_pesan_action" model="ir.actions.act_window">
+    <field name="name">Pemesanan Barang</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">wikulaundry.pesan</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<!-- This Menu Item must have a parent and an action -->
+<menuitem id="wikulaundry_pesan_menu_act" 
+    name="Pemesanan Barang" 
+    parent="wikulaundry_pembelian_menu_categ" 
+    action="wikulaundry_pesan_action" 
+    sequence="30"/>
+</odoo>
