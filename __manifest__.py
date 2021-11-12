@@ -33,7 +33,7 @@
         'views/wikulaundry_contact_pegawai.xml',
         'views/wikulaundry_bahanalatcuci.xml',
         'views/wikulaundry_daftarsupplier.xml',
-        'views/wikulaundry_pembayaran.xml',
+        'views/wikulaundry_selesaicuci.xml',
         'views/wikulaundry_akunting.xml',
         'views/wikulaundry_pemesanan.xml',
         'views/templates.xml',

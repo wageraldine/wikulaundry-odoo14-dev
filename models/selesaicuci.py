@@ -1,14 +1,14 @@
 from odoo import api, fields, models
 
 
-class Bayar(models.Model):
-    _name = 'wikulaundry.bayar'
-    _description = 'Penerimaan Pembayaran Cucian'
+class SelesaiCuci(models.Model):
+    _name = 'wikulaundry.selesaicuci'
+    _description = 'Penyelesaian Cucian'
 
     name = fields.Many2one(
         comodel_name='wikulaundry.order', 
         string='Customer',
-        domain="[('sudah_bayar','=',False)]",   
+        domain="[('selesai_cuci','=',False)]",   
         )
         
     tgl_masuk = fields.Char(
@@ -20,7 +20,7 @@ class Bayar(models.Model):
         for record in self:
             record.tgl_masuk = record.name.tanggal_masuk
        
-    tgl_bayar = fields.Datetime(        
+    tgl_selesai = fields.Datetime(        
         string='Tanggal Selesai', 
         default=fields.Datetime.now())
     

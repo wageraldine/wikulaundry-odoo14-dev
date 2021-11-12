@@ -25,7 +25,7 @@ class OrderCuci(models.Model):
         default=fields.Datetime.now,
         )
     
-    tanggal_bayar = fields.Datetime(
+    tanggal_selesai = fields.Datetime(
         compute='_compute_tanggal',
         string='Tanggal Selesai'
         )      
@@ -36,10 +36,10 @@ class OrderCuci(models.Model):
         string='Detail Order'
         )
     
-    bayar_ids = fields.One2many(
-        comodel_name='wikulaundry.bayar', 
+    selesaicuci_ids = fields.One2many(
+        comodel_name='wikulaundry.selesaicuci', 
         inverse_name='name', 
-        string='Pembayaran'
+        string='Penyelesaian Cucian'
         )    
         
     jml_pesanan = fields.Char(
@@ -47,8 +47,8 @@ class OrderCuci(models.Model):
         string='Jumlah Pesanan'
         )
     
-    sudah_bayar = fields.Boolean(
-        string='Sudah Bayar'
+    selesai_cuci = fields.Boolean(
+        string='Sudah Selesai'
         )
     
     masuk_akunting = fields.Boolean(string='Masuk Akunting')
@@ -72,17 +72,17 @@ class OrderCuci(models.Model):
     @api.model
     def _compute_tanggal(self):        
         for record in self:           
-            tgl = self.env['wikulaundry.bayar'].search([('name','=', record.id)]).mapped('tgl_bayar')
+            tgl = self.env['wikulaundry.selesaicuci'].search([('name','=', record.id)]).mapped('tgl_selesai')
             if tgl:
-                record.tanggal_bayar = tgl[0]   
-                record.sudah_bayar=True
+                record.tanggal_selesai = tgl[0]   
+                record.selesai_cuci=True
             else:
-                record.tanggal_bayar = 0
-                record.sudah_bayar=False
+                record.tanggal_selesai = 0
+                record.selesai_cuci=False
    
     def confirm(self):
         for record in self:
-            if record.tanggal_bayar:
+            if record.tanggal_selesai:
                 record.masuk_akunting=True
                 self.env['wikulaundry.akunting'].create({'kredit':record.total_harga,'name':record.name.display_name})
             else:

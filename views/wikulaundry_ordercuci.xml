@@ -14,7 +14,7 @@
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="tanggal_masuk"/>  
-                <field name="tanggal_bayar"/>      
+                <field name="tanggal_selesai"/>      
                 <field name="total_harga"/>   
                 <field name="masuk_akunting"/>                               
             </tree>    

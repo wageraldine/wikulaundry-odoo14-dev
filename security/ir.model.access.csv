@@ -5,7 +5,7 @@ access_wikulaundry_order,access.wikulaundry.order,model_wikulaundry_order,,1,1,1
 access_wikulaundry_detailcucian,access.wikulaundry.detailcucian,model_wikulaundry_detailcucian,,1,1,1,1
 access_wikulaundry_bahanalatcuci,access.wikulaundry.bahanalatcuci,model_wikulaundry_bahanalatcuci,,1,1,1,1
 access_wikulaundry_suppliernya,access.wikulaundry.suppliernya,model_wikulaundry_suppliernya,,1,1,1,1
-access_wikulaundry_bayar,access.wikulaundry.bayar,model_wikulaundry_bayar,,1,1,1,1
+access_wikulaundry_selesaicuci,access.wikulaundry.selesaicuci,model_wikulaundry_selesaicuci,,1,1,1,1
 access_wikulaundry_akunting,access.wikulaundry.akunting,model_wikulaundry_akunting,,1,1,1,1
 access_wikulaundry_pesan,access.wikulaundry.pesan,model_wikulaundry_pesan,,1,1,1,1
 access_wikulaundry_terima,access.wikulaundry.terima,model_wikulaundry_terima,,1,1,1,1

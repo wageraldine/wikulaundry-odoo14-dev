@@ -6,6 +6,6 @@ from . import partner
 from . import order_cuci
 from . import supplier
 from . import bahanalatcuci
-from . import bayar
+from . import selesaicuci
 from . import akunting
 from . import belanja
