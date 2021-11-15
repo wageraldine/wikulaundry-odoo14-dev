@@ -8,15 +8,15 @@
             <tree>
                 <!-- Add your fields here -->
                 <header>
-                  <button name="confirm" string="Masuk Akunting" class="btn-success" type="object"/>
-                  <button name="cancel" string="Keluar Akunting" class="btn-warning" type="object"/>
+                  <button name="confirm" string="Masuk Akunting" class="btn btn-success" type="object"/>
+                  <button name="cancel" string="Keluar Akunting" class="btn btn-warning ml-1" type="object"/>
                 </header>
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="tanggal_masuk"/>  
                 <field name="tanggal_selesai"/>      
                 <field name="total_harga"/>   
-                <field name="masuk_akunting"/>                               
+                <field name="masuk_akunting"/>                                             
             </tree>    
         </field>        
     </record>

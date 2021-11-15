@@ -7,6 +7,8 @@ class Akunting(models.Model):
     _order = 'id asc' 
     
     name = fields.Char(string='NAMA')    
+    id_ak = fields.Char(string='Kode Akunting')
+    
     date = fields.Datetime(
         string='WAKTU TRANSAKSI',
         default=fields.Datetime.now
@@ -22,7 +24,11 @@ class Akunting(models.Model):
             prev_saldo = prev[0]['saldo'] if prev else 0
             record.saldo = prev_saldo + record.kredit - record.debet
     
-    
+    @api.model
+    def compute_id_ak(self):
+        for record in self.search([('id_ak','=',False)]):
+            record.id_ak = 'AK'+ str(record.id)
+            
     
     
     

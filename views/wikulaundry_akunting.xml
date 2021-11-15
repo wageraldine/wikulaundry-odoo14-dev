@@ -7,12 +7,33 @@
         <field name="arch" type="xml">
             <tree create="false" delete="false">
                 <field name="name"/>
+                <field name="id_ak"/>
                 <field name="date"/>
                 <field name="debet"/>
                 <field name="kredit"/>
                 <field name="saldo"/>
                 
             </tree>
+        </field>
+    </record>
+
+    <!-- wikulaundry.akunting form view -->
+    <record id="wikulaundry_akuntingview_form" model="ir.ui.view">
+        <field name="name">wikulaundry.akunting.view.form</field>
+        <field name="model">wikulaundry.akunting</field>
+        <field name="arch" type="xml">
+            <form string="Detail Akunting" edit="false" create="false" delete="false">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="id_ak"/>
+                        <field name="date"/>
+                        <field name="debet"/>
+                        <field name="kredit"/>
+                        <field name="saldo"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
     <!-- wikulaundry.akunting action window -->
@@ -23,6 +44,9 @@
         <field name="view_mode">tree,form</field>        
     </record>
     <!-- This Menu Item must have a parent and an action -->
+
+    <function model="wikulaundry.akunting" name="compute_id_ak"/>
+    
     <menuitem 
         id="wikulaundry_akunting_menu_act" 
         name="Akunting" 

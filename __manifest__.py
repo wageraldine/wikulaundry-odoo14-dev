@@ -36,6 +36,7 @@
         'views/wikulaundry_selesaicuci.xml',
         'views/wikulaundry_akunting.xml',
         'views/wikulaundry_pemesanan.xml',
+        'views/wikulaundry_barangmasuk.xml',
         'views/templates.xml',
         'report/report.xml',
         'report/orderinvoice.xml',

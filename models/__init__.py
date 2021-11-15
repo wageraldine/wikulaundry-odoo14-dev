@@ -9,3 +9,4 @@ from . import bahanalatcuci
 from . import selesaicuci
 from . import akunting
 from . import belanja
+from . import barangmasuk

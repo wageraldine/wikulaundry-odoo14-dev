@@ -6,13 +6,19 @@
     <field name="model">wikulaundry.pesan</field>
     <field name="arch" type="xml">
         <tree>
+            <header>
+                <button name="masukakunting" string="Masuk Akunting" class="btn btn-success" type="object"/>
+                <button name="keluarakunting" string="Keluar Akunting" class="btn btn-warning ml-1" type="object"/>
+            </header>
             <field name="name"/>
             <field name="supplier"/>
             <field name="contact"/>
             <field name="tanggal_pesan"/>
             <field name="tanggal_masuk"/>
             <field name="jml_pesan"/>
+            <field name="tagihan_supplier"/>
             <field name="masuk_akunting"/>
+
             
         </tree>
     </field>
@@ -30,6 +36,7 @@
                     <field name="contact"/>
                     <field name="tanggal_pesan"/>
                     <field name="jml_pesan"/>
+                    <field name="tagihan_supplier"/>
                     
                 </group>
             </sheet>
