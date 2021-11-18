@@ -21,8 +21,7 @@
         <!-- Add your xpath here -->
         <field name="parent_id" position="after">
           <field name="is_pegawainya"/>
-          <field name="is_customernya"/> 
-          <field name="is_menikah"/>                 
+          <field name="is_customernya"/>           
         </field>
       </field>
     </record>
