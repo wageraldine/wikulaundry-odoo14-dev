@@ -15,7 +15,7 @@ class Akunting(models.Model):
         )
     debet = fields.Float(string='DEBET')
     kredit = fields.Float(string='KREDIT')  
-    saldo = fields.Float(compute='_compute_saldo', string='SALDO', required=False, store=True)
+    saldo = fields.Float(compute='_compute_saldo', string='SALDO', required=False)
     
     @api.depends('debet','kredit')
     def _compute_saldo(self):
